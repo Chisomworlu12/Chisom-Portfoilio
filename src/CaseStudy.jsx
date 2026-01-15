@@ -12,7 +12,7 @@ function CaseStudy({setOpenCaseStudy}) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border-b border-slate-800 px-8 py-6 flex items-center justify-between">
+            <div className="bg-linear-to-r from-cyan-500/10 to-blue-600/10 border-b border-slate-800 px-8 py-6 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-cyan-500/20 rounded-lg">
                   <Database size={24} className="text-cyan-400" />
@@ -80,7 +80,7 @@ Cached Summaries`}
                 </li>
               </ul>
 
-              <div className="bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border border-slate-800 rounded-2xl p-6">
+              <div className="bg-linear-to-r from-cyan-500/10 to-blue-600/10 border border-slate-800 rounded-2xl p-6">
                 <p className="text-slate-300">
                   <span className="font-bold text-white">Tech Stack:</span> React · Tailwind CSS · Supabase · PostgreSQL · RSS Parser · Gemini AI API
                 </p>
@@ -90,7 +90,7 @@ Cached Summaries`}
             {/* Footer */}
             <div className="border-t border-slate-800 px-8 py-5 flex gap-3">
               <a href={news[0].github} target="_blank"
-                    rel="noopener noreferrer" className="flex-1 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/30 transition-all">
+                    rel="noopener noreferrer" className="flex-1 py-3 bg-linear-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/30 transition-all">
                 <Github size={18} />
                 View Code
               </a>

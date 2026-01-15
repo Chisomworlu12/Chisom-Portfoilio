@@ -36,14 +36,14 @@ function Projects({ OpenCaseStudy }) {
         <h2 className="uppercase tracking-[0.25em] text-slate-400 text-xs font-bold">
           Featured Work
         </h2>
-        <div className="flex-1 h-px bg-gradient-to-r from-slate-800 to-transparent" />
+        <div className="flex-1 h-px bg-linear-to-r from-slate-800 to-transparent" />
       </div>
 
       <div className="grid md:grid-cols-2 gap-8">
         
         {/* --- CARD 1: AI NEWS SUMMARIZER --- */}
         <div className="group relative bg-slate-900/40 backdrop-blur-sm border border-slate-800 rounded-3xl overflow-hidden hover:bg-slate-900/60 hover:border-cyan-500/50 transition-all duration-500">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
           <div className="relative h-64 overflow-hidden border-b border-slate-800">
             <img 
@@ -51,7 +51,7 @@ function Projects({ OpenCaseStudy }) {
               alt={news[0].name}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent opacity-60" />
+            <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent opacity-60" />
           </div>
 
           <div className="p-10 relative">
@@ -84,7 +84,7 @@ function Projects({ OpenCaseStudy }) {
             </div>
 
             <div className="space-y-3">
-              <button onClick={OpenCaseStudy} className="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
+              <button onClick={OpenCaseStudy} className="w-full py-3.5 bg-linear-to-r from-cyan-500 to-blue-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
                 <BookOpen size={18} />
                 View Case Study
               </button>
@@ -105,7 +105,7 @@ function Projects({ OpenCaseStudy }) {
 
         {/* --- CARD 2: WEATHER DASHBOARD --- */}
         <div className="group relative bg-slate-900/40 backdrop-blur-sm border border-slate-800 rounded-3xl overflow-hidden hover:bg-slate-900/60 hover:border-purple-500/50 transition-all duration-500">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
           <div className="relative h-64 overflow-hidden border-b border-slate-800">
             <img 
@@ -113,7 +113,7 @@ function Projects({ OpenCaseStudy }) {
               alt={projects[0].name}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent opacity-60" />
+            <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent opacity-60" />
           </div>
 
           <div className="p-10 relative">
@@ -146,7 +146,7 @@ function Projects({ OpenCaseStudy }) {
             </div>
 
             <div className="space-y-3">
-              <a href={projects[0].liveLink} target="_blank" rel="noopener noreferrer" className="w-full py-3.5 bg-slate-800/80 backdrop-blur-sm border border-slate-700 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-600 hover:border-transparent transition-all duration-300">
+              <a href={projects[0].liveLink} target="_blank" rel="noopener noreferrer" className="w-full py-3.5 bg-slate-800/80 backdrop-blur-sm border border-slate-700 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-linear-to-r hover:from-purple-500 hover:to-pink-600 hover:border-transparent transition-all duration-300">
                 <ExternalLink size={18} />
                 View Project
               </a>

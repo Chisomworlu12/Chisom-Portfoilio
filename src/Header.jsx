@@ -26,8 +26,8 @@ function Header() {
         className="relative mb-12 group"
         style={{ transform: typeof window !== 'undefined' ? `translateY(${Math.min(window.scrollY * 0.1, 50)}px)` : 'none' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 blur-2xl opacity-50 group-hover:opacity-70 rounded-full transition-opacity duration-500" />
-        <div className="relative w-52 h-52 rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 p-1">
+        <div className="absolute inset-0 bg-linear-to-r from-cyan-500 via-blue-500 to-purple-600 blur-2xl opacity-50 group-hover:opacity-70 rounded-full transition-opacity duration-500" />
+        <div className="relative w-52 h-52 rounded-full bg-linear-to-br from-cyan-400 via-blue-500 to-purple-600 p-1">
           <img
             src="chisom.png"
             alt="Chisom"
@@ -37,7 +37,7 @@ function Header() {
         <div className="absolute -bottom-3 -right-3 bg-green-400 w-7 h-7 rounded-full border-4 border-slate-950 shadow-lg shadow-green-400/50" />
       </div>
 
-      <h1 className="text-7xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 mb-5 tracking-tight uppercase">
+      <h1 className="text-7xl md:text-8xl font-black text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 mb-5 tracking-tight uppercase">
         Chisom Worlu
       </h1>
 
@@ -69,7 +69,7 @@ function Header() {
         <a 
           href="#projects" 
           onClick={handleScroll}
-          className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-bold text-white flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300"
+          className="group px-8 py-4 bg-linear-to-r from-cyan-500 to-blue-600 rounded-xl font-bold text-white flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300"
         >
           View Projects
           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
