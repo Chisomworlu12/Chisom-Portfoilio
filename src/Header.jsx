@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 
 
-const skills = ["JavaScript (ES6+)","CSS", "React", "Next.js", "Supabase", "TypeScript", "Tailwind", "RSS Parsing"];
+const skills = ["JavaScript (ES6+)","CSS", "React", "Supabase", "TypeScript", "Tailwind", "RSS Parsing"];
 
 function Header() {
   const emailAddress = "worluchisom4real@gmail.com"; 
