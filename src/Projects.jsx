@@ -56,20 +56,20 @@ function Projects({ OpenCaseStudy }) {
 
           <div className="p-10 relative">
             <div className="flex justify-between items-start mb-6">
-             
-              
                 <a href={news[0].github} target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-800/50 hover:bg-slate-800 rounded-lg transition-colors group/link">
                   <Github size={20} className="text-slate-400 group-hover/link:text-white" />
                 </a>
                 <a href={news[0].liveLink} target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-800/50 hover:bg-slate-800 rounded-lg transition-colors group/link">
                   <ExternalLink size={20} className="text-slate-400 group-hover/link:text-cyan-400" />
                 </a>
-             
             </div>
 
-            <h3 className="text-3xl font-black text-white mb-3 tracking-tight group-hover:text-cyan-400 transition-colors duration-300">
-              {news[0].name}
-            </h3>
+           
+            <a href={news[0].liveLink} target="_blank" rel="noopener noreferrer" className="block group/title">
+              <h3 className="text-3xl font-black text-white mb-3 tracking-tight group-hover:text-cyan-400 group-hover/title:underline transition-colors duration-300">
+                {news[0].name}
+              </h3>
+            </a>
 
             <p className="text-slate-400 mb-6 leading-relaxed">
               {news[0].desc}
@@ -118,8 +118,6 @@ function Projects({ OpenCaseStudy }) {
 
           <div className="p-10 relative">
             <div className="flex justify-between items-start mb-6">
-            
-              
                 <a href={projects[0].github} target="_blank" rel="noopener noreferrer" className="p-2.5 bg-slate-800/50 hover:bg-slate-800 rounded-lg transition-colors group/link">
                   <Github size={20} className="text-slate-400 group-hover/link:text-white" />
                 </a>
@@ -128,9 +126,12 @@ function Projects({ OpenCaseStudy }) {
                 </a>
             </div>
 
-            <h3 className="text-3xl font-black text-white mb-3 tracking-tight group-hover:text-purple-400 transition-colors duration-300">
-              {projects[0].name}
-            </h3>
+           
+            <a href={projects[0].liveLink} target="_blank" rel="noopener noreferrer" className="block group/title">
+              <h3 className="text-3xl font-black text-white mb-3 tracking-tight group-hover:text-purple-400 group-hover/title:underline transition-colors duration-300">
+                {projects[0].name}
+              </h3>
+            </a>
 
             <p className="text-slate-400 mb-6 leading-relaxed">
               {projects[0].desc}
