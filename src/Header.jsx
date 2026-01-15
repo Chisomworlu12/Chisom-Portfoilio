@@ -6,17 +6,24 @@ import {
   FileDown 
 } from 'lucide-react';
 
-
 const skills = ["JavaScript (ES6+)","CSS", "React", "Supabase", "TypeScript", "Tailwind", "RSS Parsing"];
 
 function Header() {
   const emailAddress = "worluchisom4real@gmail.com"; 
 
+ 
+  const handleScroll = (e) => {
+    e.preventDefault();
+    const element = document.getElementById('projects');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="min-h-[85vh] flex flex-col items-center justify-center text-center">
       <div
         className="relative mb-12 group"
-        
         style={{ transform: typeof window !== 'undefined' ? `translateY(${Math.min(window.scrollY * 0.1, 50)}px)` : 'none' }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 blur-2xl opacity-50 group-hover:opacity-70 rounded-full transition-opacity duration-500" />
@@ -57,17 +64,17 @@ function Header() {
         ))}
       </div>
 
-      {/* UPDATED BUTTON GROUP */}
       <div className="flex flex-col sm:flex-row gap-4">
+        {/* Updated with onClick for smooth scroll */}
         <a 
           href="#projects" 
+          onClick={handleScroll}
           className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-bold text-white flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300"
         >
           View Projects
           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
         </a>
 
-        {/* EMAIL BUTTON */}
         <a 
           href={`mailto:${emailAddress}?subject=Project Inquiry`}
           className="px-8 py-4 bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-xl font-bold text-slate-300 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 flex items-center justify-center gap-2"
@@ -76,7 +83,6 @@ function Header() {
           Contact Me
         </a>
 
-        {/* DOWNLOAD CV BUTTON */}
         <a 
           href="/Chisom_Worlu_CV.pdf" 
           download
