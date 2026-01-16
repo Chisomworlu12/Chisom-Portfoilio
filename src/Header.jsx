@@ -65,7 +65,7 @@ function Header() {
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4">
-        {/* Updated with onClick for smooth scroll */}
+        
         <a 
           href="#projects" 
           onClick={handleScroll}
@@ -84,7 +84,7 @@ function Header() {
         </a>
 
         <a 
-          href="/Chisom_Worlu_CV.pdf" 
+          href="/CHISOM_WORLU_RESUME.pdf" 
           download
           className="px-8 py-4 bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-xl font-bold text-slate-300 hover:bg-slate-800 hover:border-purple-500/50 hover:text-purple-400 transition-all duration-300 flex items-center justify-center gap-2"
         >
