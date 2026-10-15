@@ -1,0 +1,36 @@
+{
+  "education": [
+    {
+      "school": "The Engineer Network",
+      "detail": "Frontend Development Bootcamp",
+      "year": "2025"
+    },
+    {
+      "school": "Chymall Software Development Learning Center",
+      "detail": "IT Certificate",
+      "year": "2021-2023"
+    },
+    {
+      "school": "Deeper Life High School",
+      "detail": "West African Senior School Certificate",
+      "year": "2014-2020"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "React Frameworks",
+      "issuer": "Udemy",
+      "year": "2025"
+    },
+    {
+      "name": "JavaScript Modern Essentials",
+      "issuer": "Udemy",
+      "year": "2025"
+    },
+    {
+      "name": "Tailwind CSS Mastery",
+      "issuer": "Udemy",
+      "year": "2025"
+    }
+  ]
+}

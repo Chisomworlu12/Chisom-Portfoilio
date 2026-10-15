@@ -1,0 +1,46 @@
+{
+  "title": "Selected Work",
+  "featuredLabel": "Featured",
+  "privateRepoLabel": "Private repo",
+  "projects": [
+    {
+      "name": "ClauseGuard",
+      "category": "AI & Backend",
+      "featured": true,
+      "description": "Multi-agent RAG system that flags risky clauses in contracts. A 4-agent pipeline with hybrid search and cross-encoder reranking, Postgres audit trail for every analysis, and a fine-tuned open-source model benchmarked against a frontier model. Ships with CI/CD and IP-based rate limiting.",
+      "stack": ["Python", "FastAPI", "ChromaDB", "PostgreSQL", "Next.js"],
+      "liveUrl": "https://clauseguard-tawny.vercel.app",
+      "githubUrl": null,
+      "repos": [
+        {
+          "label": "Backend",
+          "url": "https://github.com/Chisomworlu12/ClauseGuard.git"
+        },
+        {
+          "label": "Frontend",
+          "url": "https://github.com/Chisomworlu12/ClauseGuard-Frontend.git"
+        }
+      ]
+    },
+    {
+      "name": "News Summarizer",
+      "category": "Full Stack",
+      "featured": false,
+      "description": "AI-powered news platform cutting reading time by 50%. Refactored from Context API to Redux Toolkit for high-frequency data handling.",
+      "stack": ["Redux Toolkit", "Supabase Edge", "OpenAI", "PostgreSQL"],
+      "liveUrl": "https://news-summarizer-hazel.vercel.app",
+      "githubUrl": "https://github.com/Chisomworlu12/news-summarizer.git",
+      "repos": null
+    },
+    {
+      "name": "TrendBoard AI",
+      "category": "Frontend",
+      "featured": false,
+      "description": "Financial dashboard with 0ms API latency via a cache-first architecture. Real-time AI-driven visualizations and sentiment analysis.",
+      "stack": ["React", "Firebase", "OpenAI API", "Recharts", "TypeScript"],
+      "liveUrl": "https://trend-board-ai.vercel.app/",
+      "githubUrl": "https://github.com/Chisomworlu12/TrendBoard-ai.git",
+      "repos": null
+    }
+  ]
+}

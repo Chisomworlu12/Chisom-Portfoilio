@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-display-loaded), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans-loaded), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-loaded), ui-monospace, monospace;
+
+  /* Light theme (default) */
+  --color-paper: #F7F7F2;
+  --color-surface: #FFFFFF;
+  --color-ink: #1C1C1A;
+  --color-body: #3D3D39;
+  --color-muted: #75756F;
+  --color-line: #E2E2DA;
+  --color-accent: #2D5A4F;
+  --color-chip: #E8EDE8;
+}
+
+/* Dark theme: follows the system unless the visitor picked light/dark with the toggle */
+@layer base {
+  :root { color-scheme: light; }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --color-paper: #121411;
+      --color-surface: #191C18;
+      --color-ink: #ECECE5;
+      --color-body: #C5C6BE;
+      --color-muted: #8F918A;
+      --color-line: #2A2D28;
+      --color-accent: #84C7B3;
+      --color-chip: #212622;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-paper: #121411;
+    --color-surface: #191C18;
+    --color-ink: #ECECE5;
+    --color-body: #C5C6BE;
+    --color-muted: #8F918A;
+    --color-line: #2A2D28;
+    --color-accent: #84C7B3;
+    --color-chip: #212622;
+  }
+}
+
+/* Theme toggle: sun in light mode, moon in dark mode */
+.theme-icon-dark { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-icon-light { display: none; }
+  :root:not([data-theme="light"]) .theme-icon-dark { display: block; }
+}
+
+:root[data-theme="dark"] .theme-icon-light { display: none; }
+:root[data-theme="dark"] .theme-icon-dark { display: block; }
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  section[id] { scroll-margin-top: 4.5rem; }
+}
+
+/* Hero headline: words appear one after another */
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(0.35em); filter: blur(4px); }
+  to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+.word-in {
+  display: inline-block;
+  animation: word-in 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Blinking cursor after the typed name */
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+.caret {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.85em;
+  margin-left: 0.04em;
+  vertical-align: -0.05em;
+  background-color: var(--color-accent);
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+/*
+ * Scroll animations — driven by the browser's scroll position, no JavaScript.
+ * Browsers without scroll-driven animation support simply show everything as normal.
+ */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes grow-x {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.scroll-progress { display: none; }
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+
+    .scroll-progress {
+      display: block;
+      transform-origin: left;
+      animation: grow-x linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word-in { animation: none; }
+  .caret { animation: none; }
+}

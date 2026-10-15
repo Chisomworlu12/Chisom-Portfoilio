@@ -1,59 +1,44 @@
-import FadeUp from '../ui/FadeUp';
-import SectionLabel from '../ui/SectionLabel';
-import { skills } from '../../data/resume';
-
-const skillCategories = [
-  { label: 'Frontend', key: 'frontend' as const },
-  { label: 'Backend & Databases', key: 'backend' as const },
-  { label: 'DevOps & Tools', key: 'devops' as const },
-];
+import { about } from '@/content';
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto w-full max-w-[1100px] px-6 py-24 md:px-16">
-      <SectionLabel>Who I am</SectionLabel>
-      <h2
-        className="mb-16 font-[family-name:var(--font-syne)] font-black leading-[1.0] tracking-normal"
-        style={{ fontSize: 'clamp(2.25rem, 4vw, 3.75rem)' }}
-      >
-        About me.
-      </h2>
+    <section id="about" className="border-t border-line">
+      <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[1fr_380px] lg:gap-20">
+        <div className="reveal">
+          <h2 className="mb-5 font-display text-[1.75rem] font-semibold tracking-tight text-ink md:text-[2rem]">
+            {about.title}
+          </h2>
+          <div className="flex flex-col gap-4 text-[0.98rem] leading-[1.7] text-body">
+            {about.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
 
-      <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
-        <FadeUp className="flex flex-col gap-5">
-          <p className="font-[family-name:var(--font-mono)] text-[0.88rem] leading-[1.85] text-[#A0A0A0]">
-            I'm a <strong className="font-medium text-[#F5F0E8]">software engineer</strong> based in Lagos, Nigeria.
-            I build web products that solve practical problems, from verification platforms to AI-powered dashboards.
-          </p>
-          <p className="font-[family-name:var(--font-mono)] text-[0.88rem] leading-[1.85] text-[#A0A0A0]">
-            At <strong className="font-medium text-[#F5F0E8]">vworka</strong>, I lead product and frontend architecture,
-            turning feedback into clearer flows, faster iteration, and a more trustworthy verification experience.
-          </p>
-          <p className="font-[family-name:var(--font-mono)] text-[0.88rem] leading-[1.85] text-[#A0A0A0]">
-            I care about sharp interfaces, maintainable systems, performance, and product decisions that make sense
-            beyond the code editor.
-          </p>
-        </FadeUp>
+          <p className="mb-3 mt-8 font-mono text-[0.72rem] uppercase tracking-wider text-muted">{about.coreStackLabel}</p>
+          <ul className="flex list-none flex-wrap gap-2">
+            {about.coreStack.map((tag) => (
+              <li key={tag} className="border border-line bg-surface px-2.5 py-1 font-mono text-[0.75rem] text-ink">
+                {tag}
+              </li>
+            ))}
+          </ul>
 
-        <FadeUp delay={150} className="grid gap-3">
-          {skillCategories.map(({ label, key }) => (
-            <div key={key} className="rounded-lg border border-[#1E1E1E] bg-[#0F0F0F] p-5">
-              <p className="mb-3 font-[family-name:var(--font-mono)] text-[0.62rem] uppercase tracking-[0.14em] text-accent">
-                {label}
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {skills[key].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded border border-accent/10 bg-accent/5 px-2.5 py-1 font-[family-name:var(--font-mono)] text-[0.68rem] text-[#B0B0B0]"
-                  >
-                    {tag}
-                  </span>
-                ))}
+          <details className="group mt-6">
+            <summary className="cursor-pointer font-mono text-[0.75rem] text-accent">{about.allToolsLabel}</summary>
+            <p className="mt-3 text-[0.88rem] leading-relaxed text-muted">{about.allTools.join(' · ')}</p>
+          </details>
+        </div>
+
+        <div className="reveal">
+          <dl className="flex flex-col gap-6 border border-line bg-surface/60 p-6 md:p-7">
+            {about.facts.map((fact) => (
+              <div key={fact.label}>
+                <dt className="mb-1 font-mono text-[0.7rem] uppercase tracking-wider text-muted">{fact.label}</dt>
+                <dd className="font-medium text-ink">{fact.value}</dd>
               </div>
-            </div>
-          ))}
-        </FadeUp>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
   );

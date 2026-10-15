@@ -1,0 +1,70 @@
+{
+  "title": "About",
+  "paragraphs": [
+    "I’m a software engineer based in Lagos, Nigeria, building products that solve practical problems, from healthcare platforms to AI-powered systems.",
+    "I’m the founder of vWorka, a job marketplace for blue and grey-collar workers. I built the first version solo on WhatsApp, grew it to 300 users, and used their feedback to design the mobile app launching in December. I also built the full client at Tracmedy and ClauseGuard, a multi-agent RAG system for contract risk analysis. I care about maintainable systems, performance, and product decisions that make sense beyond the code editor."
+  ],
+  "coreStackLabel": "Core stack",
+  "coreStack": [
+    "Python",
+    "FastAPI",
+    "RAG pipelines",
+    "ChromaDB",
+    "Multi-agent systems",
+    "PostgreSQL",
+    "TypeScript",
+    "Next.js",
+    "Supabase"
+  ],
+  "allToolsLabel": "All tools",
+  "allTools": [
+    "RAG pipelines",
+    "Hybrid search",
+    "Cross-encoder reranking",
+    "Multi-agent systems",
+    "LLM fine-tuning",
+    "ChromaDB",
+    "Python",
+    "FastAPI",
+    "REST APIs",
+    "PostgreSQL",
+    "Supabase",
+    "Firebase",
+    "TypeScript",
+    "JavaScript",
+    "Deno",
+    "WhatsApp Business API",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Zustand",
+    "Redux Toolkit",
+    "TanStack Query",
+    "NextAuth",
+    "Git",
+    "GitHub",
+    "GitHub Actions",
+    "Vercel",
+    "Jest",
+    "React Testing Library"
+  ],
+  "facts": [
+    {
+      "label": "Location",
+      "value": "Lagos, Nigeria"
+    },
+    {
+      "label": "Current roles",
+      "value": "Frontend Engineer at Tracmedy · Founder at vWorka"
+    },
+    {
+      "label": "Focus",
+      "value": "AI, Backend & Frontend Engineering"
+    },
+    {
+      "label": "Status",
+      "value": "Open to AI, backend & frontend roles"
+    }
+  ]
+}

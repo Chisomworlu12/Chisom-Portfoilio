@@ -1,56 +1,66 @@
-import { useState } from 'react';
-import SectionLabel from '../ui/SectionLabel';
-import ProjectCard from '../ui/ProjectCard';
-import FadeUp from '../ui/FadeUp';
-import { projects } from '../../data/resume';
-import type { ProjectTag } from '../../types';
+import { ArrowUpRight } from 'lucide-react';
+import Section from '../ui/Section';
+import { projects } from '@/content';
 
-const filters: { label: string; value: ProjectTag }[] = [
-  { label: 'All', value: 'all' },
-  { label: 'Full Stack', value: 'fullstack' },
-  { label: 'Frontend', value: 'frontend' },
-  { label: 'Backend', value: 'backend' },
-];
+function displayUrl(href: string) {
+  return href.replace(/^https?:\/\//, '').replace(/\.git$/, '').replace(/\/$/, '');
+}
+
+function ProjectLink({ href, label }: { href: string; label?: string }) {
+  return (
+    <a
+      aria-label={label ? `${label}: ${displayUrl(href)}` : undefined}
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="group inline-flex items-center gap-1 break-all font-mono text-[0.8rem] text-ink transition-colors hover:text-accent"
+    >
+      {label && <span className="mr-1 inline-block text-[0.7rem] uppercase tracking-wider text-muted">{label}</span>}
+      <span className="underline decoration-muted/60 underline-offset-4 group-hover:decoration-accent">{displayUrl(href)}</span>
+      <ArrowUpRight size={14} className="shrink-0" />
+    </a>
+  );
+}
 
 export default function Projects() {
-  const [active, setActive] = useState<ProjectTag>('all');
-  const filtered = active === 'all' ? projects : projects.filter((p) => p.tag === active);
-
   return (
-    <section id="projects" className="w-full max-w-[1100px] mx-auto px-6 md:px-16 py-24">
-      <SectionLabel>Selected work</SectionLabel>
-      <h2
-        className="font-[family-name:var(--font-syne)] font-black tracking-[-0.03em] leading-[1.0] mb-12"
-        style={{ fontSize: 'clamp(2.25rem, 4vw, 3.75rem)' }}
-      >
-        Projects.
-      </h2>
-
-      {/* Filter tabs */}
-      <div className="flex flex-wrap gap-2 mb-10">
-        {filters.map((f) => (
-          <button
-            key={f.value}
-            onClick={() => setActive(f.value)}
-            className={`font-[family-name:var(--font-mono)] text-[0.68rem] tracking-[0.1em] uppercase px-4 py-1.5 rounded-full border cursor-pointer transition-all duration-200 ${
-              active === f.value
-                ? 'bg-accent border-accent text-[#0D0D0D] font-semibold'
-                : 'border-[#252525] text-[#6B6B6B] bg-transparent hover:border-accent/30 hover:text-[#C0C0C0]'
-            }`}
+    <Section id="work" title={projects.title}>
+      <ol className="list-none">
+        {projects.projects.map((project) => (
+          <li
+            key={project.name}
+            className="reveal grid grid-cols-1 gap-3 border-b border-line py-8 first:pt-0 last:border-b-0 md:grid-cols-[180px_1fr] lg:grid-cols-[180px_1fr_auto] lg:gap-10"
           >
-            {f.label}
-          </button>
-        ))}
-      </div>
+            <p className="pt-1 font-mono text-[0.7rem] font-medium uppercase tracking-wider text-accent">
+              {project.category}
+              {project.featured && <span className="text-muted"> · {projects.featuredLabel}</span>}
+            </p>
 
-      {/* Cards grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filtered.map((p, i) => (
-          <FadeUp key={p.name} delay={i * 60}>
-            <ProjectCard project={p} />
-          </FadeUp>
+            <div className="max-w-[640px]">
+              <h3 className="mb-2 font-display text-[1.2rem] font-semibold text-ink">{project.name}</h3>
+              <p className="mb-4 text-[0.93rem] leading-[1.65] text-muted">{project.description}</p>
+              <ul className="flex list-none flex-wrap gap-1.5">
+                {project.stack.map((tech) => (
+                  <li key={tech} className="bg-chip px-2 py-0.5 font-mono text-[0.7rem] text-body">
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-2 md:col-start-2 lg:col-start-auto lg:items-end">
+              {project.liveUrl && <ProjectLink href={project.liveUrl} />}
+              {project.githubUrl && <ProjectLink href={project.githubUrl} />}
+              {project.repos?.map((repo) => (
+                <ProjectLink key={repo.url} href={repo.url} label={repo.label} />
+              ))}
+              {!project.liveUrl && !project.githubUrl && !project.repos?.length && (
+                <span className="font-mono text-[0.8rem] text-muted">{projects.privateRepoLabel}</span>
+              )}
+            </div>
+          </li>
         ))}
-      </div>
-    </section>
+      </ol>
+    </Section>
   );
 }

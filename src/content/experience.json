@@ -1,0 +1,35 @@
+{
+  "title": "Experience",
+  "showDetailsLabel": "Show details",
+  "hideDetailsLabel": "Hide details",
+  "jobs": [
+    {
+      "company": "vWorka",
+      "role": "Founder & Software Engineer",
+      "location": "Lagos, Nigeria",
+      "period": "Mar 2026 - Present",
+      "summary": "Founded and built a job marketplace for blue and grey-collar workers in Nigeria. Took the first version, a WhatsApp-native platform with a direct Meta API integration, to 300 users as a solo developer, and am now building the mobile app launching in December."
+    },
+    {
+      "company": "Tracmedy",
+      "role": "Frontend Engineer",
+      "location": "Lagos, Nigeria",
+      "period": "May 2026 - Present",
+      "summary": "Sole frontend engineer at a healthcare startup. Built the complete client, from the web app to the admin dashboard, including telemedicine, AI-driven insights, and payments, and optimized it to a 95 Lighthouse performance score and a perfect 100 SEO score."
+    },
+    {
+      "company": "Bondah",
+      "role": "Frontend Intern",
+      "location": "Lagos, Nigeria",
+      "period": "May 2026 - June 2026",
+      "summary": "Built the company's first full website from scratch and redesigned the marketing site, resolving every dead link to improve SEO and user experience."
+    },
+    {
+      "company": "Rudratek",
+      "role": "Frontend Developer (Freelance)",
+      "location": "Bengaluru, India",
+      "period": "Feb 2026 - June 2026",
+      "summary": "Delivered production-ready Next.js 15 features with 100% design accuracy from Figma, while improving Core Web Vitals and integrating REST APIs."
+    }
+  ]
+}

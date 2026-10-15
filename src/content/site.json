@@ -1,0 +1,48 @@
+{
+  "name": "Chisom Worlu",
+  "url": "https://chisomworlu.xyz",
+  "jobTitle": "Software Engineer",
+  "location": "Lagos, Nigeria",
+  "pageTitle": "Chisom Worlu — Software Engineer (AI, Backend & Frontend)",
+  "description": "Chisom Worlu is a software engineer in Lagos, Nigeria, building AI, backend, and frontend systems — from RAG pipelines and APIs to products like vWorka.",
+  "keywords": [
+    "Chisom Worlu",
+    "Software Engineer",
+    "Lagos",
+    "Nigeria",
+    "Frontend Engineer",
+    "Backend Engineer",
+    "AI Engineer",
+    "RAG",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Python",
+    "FastAPI",
+    "Portfolio"
+  ],
+  "cvFile": "Chisom_Worlu_CV.pdf",
+  "resumeButton": "Resume ↓",
+  "nav": [
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Experience",
+      "href": "#experience"
+    },
+    {
+      "label": "Work",
+      "href": "#work"
+    },
+    {
+      "label": "Writing",
+      "href": "#writing"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ]
+}
