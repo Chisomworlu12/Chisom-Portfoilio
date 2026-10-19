@@ -2,7 +2,7 @@
   "title": "About",
   "paragraphs": [
     "I’m a software engineer based in Lagos, Nigeria, building products that solve practical problems, from healthcare platforms to AI-powered systems.",
-    "I’m the founder of vWorka, a job marketplace for blue and grey-collar workers. I built the first version solo on WhatsApp, grew it to 300 users, and used their feedback to design the mobile app launching in December. I also built the full client at Tracmedy and ClauseGuard, a multi-agent RAG system for contract risk analysis. I care about maintainable systems, performance, and product decisions that make sense beyond the code editor."
+    "I’m the solo-builder of vWorka, a job marketplace for blue and grey-collar workers. I built the first version solo on WhatsApp, grew it to 300 users, and used their feedback to design the mobile app launching in December. I also built the full client at Tracmedy and ClauseGuard, a multi-agent RAG system for contract risk analysis. I care about maintainable systems, performance, and product decisions that make sense beyond the code editor."
   ],
   "coreStackLabel": "Core stack",
   "coreStack": [
